@@ -12,7 +12,7 @@ class DetectronPizzaDetector(AbstractPizzaDetector):
         frame, x1, y1, x2, y2
 
         Donde (x1, y1) es la esquina superior izquierda de la pizza
-        y (x2, y2) es la esquina inferior izquierda
+        y (x2, y2) es la esquina inferior derecha
         """
         names = ["frame", "x1", "y1", "x2", "y2"]
         example = pd.DataFrame(columns=names)
