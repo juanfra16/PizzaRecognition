@@ -4,7 +4,6 @@ import pandas as pd
 
 class YoloPizzaDetector(AbstractPizzaDetector):
 
-    @abstractmethod
     def detect_pizzas_in_video(self, video_path: str) -> pd.DataFame:
         """
         Método debe recibir el path a un video y como 
