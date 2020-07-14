@@ -3,9 +3,9 @@ import pandas as pd
 
 class PizzaClassifier:
 
-    def __init__(self, model, target_label=2):
+    def __init__(self, model, classes: list):
         self.model = model
-        self.target_label = target_label
+        self.classes = classes # Nombres de las clases. Ej: ['before_cut', 'during_cut', 'done']
 
     def classify_pizzas(self, video_path: str, metadata: pd.DataFrame) -> pd.DataFrame:
         """
@@ -14,7 +14,8 @@ class PizzaClassifier:
 
         frame, label, x1, y1, x2, y2
 
-        Y retorna un DataFrame del mismo formato pero solo con pizzas
-        que fueron classificadas como listas
+        Y retorna un DataFrame con formato
+        
+        frame, label, x1, y1, x2, y2, pizza_state
         """
         pass
