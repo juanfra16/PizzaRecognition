@@ -1,1 +1,1 @@
-from abstract import AbstractPizzaDetector
+from .abstract import AbstractPizzaDetector
