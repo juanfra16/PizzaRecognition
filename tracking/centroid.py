@@ -15,5 +15,5 @@ class CentroidTracker(AbstractPizzaTracker):
         frame, label, x1, y1, x2, y2
         """
         video = Video(metadata)
-        video.track()
+        video.track(window=50)
         return video.to_df()
