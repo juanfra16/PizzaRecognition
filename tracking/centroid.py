@@ -2,7 +2,7 @@ from .abstract import AbstractPizzaTracker
 from video import Video
 
 class CentroidTracker(AbstractPizzaTracker):
-    def identify(self, metadata):
+    def identify(self, metadata, window=50):
         """
         Metodo identifica pizzas unicas en la metadata
 
@@ -15,5 +15,5 @@ class CentroidTracker(AbstractPizzaTracker):
         frame, label, x1, y1, x2, y2
         """
         video = Video(metadata)
-        video.track(window=50)
+        video.track(window=window)
         return video.to_df()
