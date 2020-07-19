@@ -1,5 +1,5 @@
 from .abstract import AbstractPizzaTracker
-
+from video import Video
 
 class CentroidTracker(AbstractPizzaTracker):
     def identify(self, metadata):
@@ -14,4 +14,6 @@ class CentroidTracker(AbstractPizzaTracker):
 
         frame, label, x1, y1, x2, y2
         """
-        return super().identify(metadata)
+        video = Video(metadata)
+        video.track()
+        return video.to_df()
