@@ -1,5 +1,5 @@
 from .abstract import AbstractPizzaTracker
-from video import Video
+from .video import Video
 
 class CentroidTracker(AbstractPizzaTracker):
     def identify(self, metadata, window=50):
