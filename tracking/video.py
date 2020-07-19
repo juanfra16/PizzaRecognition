@@ -1,6 +1,6 @@
 import pandas as pd
-from label import Label
-from rect import Rectangulo
+from .label import Label
+from .rect import Rectangulo
 
 def labelGen():
     i = 0
