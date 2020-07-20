@@ -25,7 +25,7 @@ class DetectronPizzaDetector(AbstractPizzaDetector):
         predictor = DefaultPredictor(cfg)
         return predictor
 
-    def detect_pizzas_in_video(self, video_path: str) -> pd.DataFame:
+    def detect_pizzas_in_video(self, video_path: str) -> pd.DataFrame:
         """
         Método debe recibir el path a un video y como 
         output debe entregar un DataFrame con la siguiente estructura:
