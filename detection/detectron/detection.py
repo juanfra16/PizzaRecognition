@@ -16,12 +16,14 @@ from detectron2.config import get_cfg
 
 
 class DetectronPizzaDetector(AbstractPizzaDetector):
+    def __init__(self, weights_path="./model_final.pth"):
+        self.weights_path = weights_path
 
-    def load_model(self, weights_path="model_final.pth"):
+    def load_model(self):
         cfg = get_cfg()
         cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
         cfg.MODEL.ROI_HEADS.NUM_CLASSES = 1  # only has one class (pizza)
-        cfg.MODEL.WEIGHTS = os.path.join(".", weights_path)
+        cfg.MODEL.WEIGHTS = self.weights_path
         predictor = DefaultPredictor(cfg)
         return predictor
 
