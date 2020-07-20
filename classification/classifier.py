@@ -5,7 +5,7 @@ import cv2
 class PizzaClassifier:
 
     def __init__(self, classes: list, model=None, target_size=(224, 224)):
-        self.model = model
+        self.model = self.load_model(model)
         self.classes = classes # Nombres de las clases. Ej: ['before_cut', 'during_cut', 'done']
         self.target_size = target_size
     
