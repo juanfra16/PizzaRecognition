@@ -1,6 +1,7 @@
+import pandas as pd
+
+
 class Label:
-
-
     def __init__(self, rectangulos=None, video=None):
         assert rectangulos is None or isinstance(rectangulos, list)
         self.name = next(video.name)
