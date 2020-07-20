@@ -1,1 +1,1 @@
-from detection import DetectronPizzaDetector
+from .detection import DetectronPizzaDetector
