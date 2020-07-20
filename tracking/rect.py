@@ -1,5 +1,5 @@
 import pandas as pd
-
+from .label import Label
 
 
 class Rectangulo:
