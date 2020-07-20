@@ -53,6 +53,10 @@ class YoloPizzaDetector(AbstractPizzaDetector):
         #rvideo = reversed(video_path)
         #aux = rvideo[rvideo.find("/"):]
         #path = reversed(aux)
+        real_path = os.path.dirname(os.path.realpath(__file__))
+        cfg = os.path.join(real_path, cfg)
+        names = os.path.join(real_path, names)
+        weights = os.path.join(real_path, weights)
         path  = os.path.split(video_path)[1]
         new_path = os.path.join("temporal", path)
         shutil.copy2(video_path, new_path)
