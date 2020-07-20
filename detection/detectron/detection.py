@@ -53,9 +53,9 @@ class DetectronPizzaDetector(AbstractPizzaDetector):
             for i in range(len(outputs["instances"])):
                 list_outputs.append([n_frame,
                                      outputs["instances"].pred_boxes[i].tensor.tolist()[0][0],
-                                     outputs["instances"].pred_boxes[i].tensor.tolist()[0][3],
+                                     outputs["instances"].pred_boxes[i].tensor.tolist()[0][1],
                                      outputs["instances"].pred_boxes[i].tensor.tolist()[0][2],
-                                     outputs["instances"].pred_boxes[i].tensor.tolist()[0][1]])
+                                     outputs["instances"].pred_boxes[i].tensor.tolist()[0][3]])
             aux = pd.DataFrame(list_outputs, columns=names)
             example = example.append(aux)
             n_frame += 1
