@@ -47,7 +47,7 @@ class PizzaClassifier:
         video = cv2.VideoCapture(video_path)
         pizza_states = []
 
-        for index, row in tqdm(metadata.iterrows()):
+        for index, row in tqdm(metadata.iterrows(), total=len(metadata)):
 
           # Get frame
           video.set(1, row.frame)
