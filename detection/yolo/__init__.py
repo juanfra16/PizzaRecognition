@@ -1,1 +1,1 @@
-from detection import YoloPizzaDetector
+from .detection import YoloPizzaDetector
