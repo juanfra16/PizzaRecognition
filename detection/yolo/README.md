@@ -1,6 +1,11 @@
 # YOLO
+## Detect
+Se tienen 
 
-## Requerimientos
+
+
+#
+## Train
 
 ## Instalación
-Instrucciones para instalar
+Correr el archivo requirements.txt

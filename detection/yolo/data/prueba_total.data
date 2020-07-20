@@ -1,0 +1,4 @@
+classes=1
+train=data/train_2.txt
+valid=data/test_2.txt
+names=data/arara.names
