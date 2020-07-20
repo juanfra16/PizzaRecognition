@@ -1,5 +1,4 @@
 import tensorflow as tf
-#import keras
 import numpy as np
 import pandas as pd
 import cv2
@@ -66,16 +65,15 @@ class PizzaClassifier:
           # Resize frame
           resized_pizza = self.resize_pizza(frame_pizza, self.target_size)
           
-          pizza_states.append(self.classes[model.predict(resized_pizza).argmax(axis=1)[0]])
+          pizza_states.append(self.classes[self.model.predict(resized_pizza).argmax(axis=1)[0]])
         
         df_out = metadata.copy()
         df_out["pizza_state"] = pizza_states
 
         return df_out
       
-    def load_model(self, model_path):
-        if type(model_path) is str:
-            self.model = tf.keras.models.load_model(model_path)
-            #self.model = keras.models.load_model(model_path)
+    def load_model(self, model):
+        if type(model) is str:
+            self.model = tf.keras.models.load_model(model)
         else: 
             self.model = model
