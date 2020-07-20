@@ -4,6 +4,7 @@ from .detect_arara import detect
 import os
 import shutil
 from sys import platform
+import os
 
 class Opt:
     def __init__(self,cfg, names, weights, source, output, img_size, conf_thres,
@@ -42,17 +43,17 @@ class YoloPizzaDetector(AbstractPizzaDetector):
         y (x2, y2) es la esquina inferior derecha
         """
         os.mkdir("temporal")
-        if platform in ['linux', 'darwin']:
-            sep = "/"
-        else:
-            sep = "\"
+        #if platform in ['linux', 'darwin']:
+        #    sep = "/"
+        #else:
+        #    sep = "\"
         rvideo = reversed(video_path)
         aux = rvideo[rvideo.find(sep):]
         path = reversed(aux)
-        new_path = "temporal" + sep + path
+        new_path = os.path.join("temporal", path)
         shutil.copy2(video_path, new_path)
         source = "temporal"
-        opt = Opt(cfg,names,weights, source, output, img_size, conf_thres,
+        opt = Opt(cfg ,names ,weights , source, output, img_size, conf_thres,
                                iou_thres, fourcc, half, device, view_img, save_txt,
                                agnostic_nms, augment, classes)
         a = detect(opt)
