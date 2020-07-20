@@ -66,4 +66,5 @@ class YoloPizzaDetector(AbstractPizzaDetector):
                                agnostic_nms, augment, classes)
         a = detect(opt)
         # Ahora esta creada una copia en la carpeta temporal. Su path es new_path
-        return a.values()
+        result = a.values()
+        return list(result)[0]
