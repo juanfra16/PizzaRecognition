@@ -4,7 +4,7 @@ import cv2
 
 class PizzaClassifier:
 
-    def __init__(self, model, classes: list, target_size=(224, 224)):
+    def __init__(self, classes: list, model=None, target_size=(224, 224)):
         self.model = model
         self.classes = classes # Nombres de las clases. Ej: ['before_cut', 'during_cut', 'done']
         self.target_size = target_size
@@ -42,6 +42,9 @@ class PizzaClassifier:
         using tf.DataSet.
         
         """
+        
+        if self.model is None:
+            raise Exception("Model not loaded. Please run method load_model")
 
         video = cv2.VideoCapture(video_path)
         pizza_states = []
@@ -71,5 +74,8 @@ class PizzaClassifier:
         return df_out
     
     def load_model(self, model_path):
-        self.model = tf.keras.models.load_model(MODEL_LOAD_FILEPATH)
+        if type(load_model) is str:
+            self.model = tf.keras.models.load_model(model_path)
+        else: 
+            self.model = model
         
