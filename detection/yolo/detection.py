@@ -42,7 +42,10 @@ class YoloPizzaDetector(AbstractPizzaDetector):
         Donde (x1, y1) es la esquina superior izquierda de la pizza
         y (x2, y2) es la esquina inferior derecha
         """
-        os.mkdir("temporal")
+        try:
+            os.mkdir("temporal")
+        except FileExistsError:
+            pass
         #if platform in ['linux', 'darwin']:
         #    sep = "/"
         #else:
