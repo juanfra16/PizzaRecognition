@@ -70,7 +70,7 @@ class PizzaClassifier:
 
         return df_out
       
-      def load_model(self, model_path):
+    def load_model(self, model_path):
         if type(load_model) is str:
             self.model = tf.keras.models.load_model(model_path)
         else: 
