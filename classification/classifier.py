@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 import cv2
+from tqdm.auto import tqdm
 
 
 class PizzaClassifier:
@@ -46,7 +47,7 @@ class PizzaClassifier:
         video = cv2.VideoCapture(video_path)
         pizza_states = []
 
-        for index, row in metadata.iterrows():
+        for index, row in tqdm(metadata.iterrows()):
 
           # Get frame
           video.set(1, row.frame)
