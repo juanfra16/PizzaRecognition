@@ -69,4 +69,7 @@ class PizzaClassifier:
         df_out["pizza_state"] = pizza_states
 
         return df_out
+    
+    def load_model(self, model_path):
+        self.model = tf.keras.models.load_model(MODEL_LOAD_FILEPATH)
         
