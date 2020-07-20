@@ -31,7 +31,7 @@ class YoloPizzaDetector(AbstractPizzaDetector):
     def detect_pizzas_in_video(self, video_path: str, cfg='cfg/yolov3-spp.cfg', names='data/arara.names',
                                weights='weights/arara_yolov3.pt', output='output', img-size=512, conf-thres=0.3,
                                iou-thres=0.6, fourcc='mp4v', half=False, device='', view-img=False, save-txt=True,
-                               agnostic-nms=False, augment=False, classes=None) -> pd.DataFame:
+                               agnostic-nms=False, augment=False, classes=None) -> pd.DataFrame:
         """
         Método debe recibir el path a un video y como 
         output debe entregar un DataFrame con la siguiente estructura:
